@@ -405,7 +405,6 @@ void playing(short listNO,RecvData recvdata){
 	printf("Playing: Thread ID: %ld PK %ld  name: %s PK %s\n",list[games[gameNO].listNO.user1].pid,list[games[gameNO].listNO.user2].pid,list[games[gameNO].listNO.user1].name,list[games[gameNO].listNO.user2].name);
 	/*this challenge is or not over*/
 	if (games[gameNO].blood.user1==0||games[gameNO].blood.user2==0){
-		printf("this game over!\n");
 		/*TODO lock signal_list*/
 		while (signal_list);
 		SD.type=10;
