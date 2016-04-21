@@ -1,0 +1,2 @@
+compile: make
+excute: ./server
