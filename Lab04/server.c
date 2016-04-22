@@ -209,6 +209,8 @@ short initplaying(short u1,short u2){
 	}
 	list[u1].gamesNO=i;
 	list[u2].gamesNO=i;
+	list[u1].state=2;
+	list[u2].state=2;
 	games[i].use=1;
 	games[i].listNO.user1=u1;
 	games[i].listNO.user2=u2;
@@ -421,6 +423,8 @@ void playing(short listNO,RecvData recvdata){
 		SD.user_score=htonl(list[games[gameNO].listNO.user1].score);
 		SD.challenger_score=htonl(list[games[gameNO].listNO.user2].score);
 		signal_list=1;
+		list[games[gameNO].listNO.user1].state=1;
+		list[games[gameNO].listNO.user2].state=1;
 		/*TODO lock signal_list*/
 	}
 
